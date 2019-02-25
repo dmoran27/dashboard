@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/all.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/datatables.css">
+	<link rel="stylesheet" href="css/style.css"> 
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="js/all.min.js"></script>
+
+	<script type="text/javascript" src="js/datatables.js"></script>
+	<script type="text/javascript" src="js/dashboard.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<!--header class="row  info py-3">
+			<div class="col-1">
+				<img src="img/unexpo.png" class="img-fluid" alt="">
+			</div>
+			<div class="col  ">
+				<p>
+					Universidad Nacional Experimental Politécnica<br>"Antonio Jose de Sucre"<br>Vice Rectorado Puerto Ordaz<br>
+					Oficina Regional de Tecnología y Servicios de Información
+				</p>
+				
+			</div>
+		</header-->
+
+		
+		<section class="row d-flex flex-wrap flex-sm-nowrap p-0">
+
+
+			<!--MENU LATERAL-->
+			<aside class="col-12 col-sm-2 barra-lateral p-0 mb-0 d-flex  justify-content-center "> 
+					<nav class="m-0  text-center text-lg-left w-100">
+						
+						<!--Logo-->
+						<div class="logo border2">
+							<h3 class="">HelpDesk</h3>
+							<div class="text-center my-3">
+									<img src="img/logo.jpg" width=100px class="rounded-circle img-fluid shadow" alt="">
+							</div>
+							<p class="text-white text-center ">Administrador</p>
+						</div>	
+
+						<!--enlaces de navegacion-->
+						<ul class="p-0 m-0 d-flex flex-wrap justify-content-center justify-content-sm-start" id="main-menu">
+							
+							<!--enlace de inicio-->
+							<li><a class="botonBarraNavegacion" href="index.html"><i class="fa fa-home mr-lg-3"></i><span>Inicio</span></a></li>
+							
+
+							<!--enlace de Actividades-->
+							<li class=" dropright">
+							  <a class=" dropdown-toggle botonBarraNavegacion " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ticket-alt mr-lg-3"></i><span>Actividades</span></a>
+							  <div class="dropdown-menu m-0 " aria-labelledby="dropdownMenuLink"><!-- Dropdown menu links -->
+									<a href="modules/hardware.html" class="dropdown-item"> <i class="fa fa-desktop mr-lg-3"></i>A nivel de hardware</a>
+									<a href="modules/software.html" class="dropdown-item"><i class="fa fa-terminal mr-lg-3"></i>A nivel de software</a>
+									<a href="modules/personal.html" class="dropdown-item"><i class="fa fa-user-tie mr-lg-3"></i>A nivel de personal</a>
+							  </div>
+							</li> 
+
+							<!--enlace de usuarios-->
+							<li class=" dropright">
+							  <a class=" dropdown-toggle botonBarraNavegacion " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-users mr-lg-3"></i><span>Usuarios</span></a>
+							  <div class="dropdown-menu m-0 " aria-labelledby="dropdownMenuLink"><!-- Dropdown menu links -->
+									<a href="modules/crearUsuarios.html" class="dropdown-item"> <i class="fa fa-user-plus mr-lg-3"></i>Agregar nuevo usuario</a>
+									<a href="modules/listarUsuarios.html" class="dropdown-item"><i class="fa fa-clipboard-list mr-lg-3"></i>Ver lista de usuarios del sistema</a>
+							  </div>
+							</li>
+
+							<!--enlace de clientes-->
+							<li class=" dropright">
+							  <a class=" dropdown-toggle botonBarraNavegacion " href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-address-book mr-lg-3 "></i><span>Clientes</span></a>
+							  <div class="dropdown-menu m-0" aria-labelledby="dropdownMenuLink2"><!-- Dropdown menu links -->
+							  	<a href="#" class="dropdown-item"> <i class="fa fa-user-plus mr-lg-3"></i>Agregar nuevo cliente</a>
+								<a href="#" class="dropdown-item"><i class="fa fa-clipboard-list mr-lg-3"></i>Ver lista de clientes en sistema</a>
+							  </div>
+							</li>
+
+
+							<!--enlace de Equipos-->
+							<li class=" dropright">
+							  <a class=" dropdown-toggle botonBarraNavegacion " href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-toolbox mr-lg-3"></i><span>Equipos</span></a>
+							  <div class="dropdown-menu m-0" aria-labelledby="dropdownMenuLink3"> <!-- Dropdown menu links -->
+								<a href="modules/crearEquipos.html" class="dropdown-item"> <i class="fa fa-plus-circle mr-lg-3"></i>Agregar nuevo Equipo</a>
+								<a href="modules/listarEquipos.html" class="dropdown-item"><i class="fa fa-clipboard-list mr-lg-3"></i>Ver lista de Equipos en sistema</a>
+							   
+							  </div>
+							</li>
+
+							<!--enlace de Reportes-->
+							<li ><a class="botonBarraNavegacion" href="modules/reportes.html"><i class="fa fa-file-alt mr-lg-3"></i><span>Reportes</span></a></li>
+
+							<!--enlace de notificaciones en dispositivos  < 544px en pantalla-->
+							<li class=" d-sm-none"> <a href="modules/notificaciones.html" class="notificaciones text-white"><i class="fa fa-bell mr-2"></i><span>2</span></a></li>
+
+							<!--enlace de configuraciones en dispositivos  < 544px en pantalla-->
+							<li class=" d-sm-none dropdown">
+								 <a class="dropdown-toggle notificaciones text-white "  href="#" role="button" id="dropdownMenuLink5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-tools mr-3"></i></a>
+								<div class="dropdown-menu mr-5" aria-labelledby="dropdownMenuLink5">
+									<a href="modules/perfil.html" class="dropdown-item  text-white"><i class="fa fa-user "></i>Perfil</a>
+									<a href="modules/configuracion.html" class="dropdown-item  text-white"><i class="fa fa-tools"></i>Configuraciones</a>
+									<div class="dropdown-divider m-0"></div>
+									<a href="#" class="dropdown-item  text-white"><i class="fa fa-sign-out-alt"></i>Cerrar Sesion</a>						
+								</div>
+							</li>
+						</ul>					
+				</nav>
+				<!--FIN DEL MENU LATERAL-->
+			</aside>
+
+				<!--MENU BARRA HORIZONTAL-->
+			<section class="col-12 col-sm-10 mb-2">
+				<div class="row barraHorizontalDos p-2 pr-3 pr-lg-5 text-white">					
+					<div class="col p-0 d-flex justify-content-end">
+							<!--enlace de notificaciones-->
+						<a href="modules/notificaciones.html" class="text-white"><i class="fa fa-bell "></i><sub class=" bg-danger rounded-circle p-2">2</sub></a>
+							<!--Enlace de configuracion-->
+						<div class="dropdown">	
+								<a class="dropdown-toggle text-white p-2 ml-3"  href="#" role="button" id="dropdownMenuLink6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Diana</a>
+								<div class="dropdown-menu mt-0 p-0 mr-5" aria-labelledby="dropdownMenuLink6">
+									<a href="modules/perfil.html" class="dropdown-item"><i class="fa fa-user mr-3"></i><span>Perfil,</span></a>
+									<a href="modules/configuracion.html" class="dropdown-item"><i class="fa fa-tools mr-3"></i><span>Configuraciones</span></a>
+									<div class="dropdown-divider m-0"></div>
+									<a href="#" class="dropdown-item"><i class="fa fa-sign-out-alt mr-3"></i><span>Cerrar Sesion</span></a>						
+								</div>
+						</div>
+					</div>
+					<!--FIN BARRA HORIZONTAL-->
+				</div>		
+
+
+					<!--CONTENIDO-->				
+				<main class="row p-0 m-0">
+					<div class="col">
+
+
+						<section class="progreso row d-flex flex-wrap justify-content-center">
+							<div class="col">
+
+
+
+								<!--Titulo-->	
+								<div class="row">								
+
+									<div class="col-12 mt-3 text-center">
+										<h2>Bienvenido al Sistema ORTSI!!!</h2>
+									
+										<h3 class="text-muted m-4">Resumen de Actividades</h3>
+									</div>
+								</div>
+
+								<!--Resumen de actividades-->	
+								<div class="row d-flex justify-content-center justify-content-md-between">
+									<div class="col-12 col-sm-6 col-md-4 p-0 m-2 shadow card border-secondary mb-3" style="max-width: 18rem;">
+								  <div class="card-header text-center">Actividades Culminadas</div>
+								  <div class="card-body text-secondary">
+								    <h5 class="card-title">25 por usted</h5>
+								    <p class="card-text">30 por los demas empleados</p>
+								    <p class="card-text">55 en total</p>
+								  </div>
+									</div>
+									<div class="col-12 col-sm-6 col-md-4  p-0 m-2 shadow card border-success mb-3" style="max-width: 18rem;">
+									  <div class="card-header text-center">Abiertas</div>
+									  <div class="card-body text-success">
+									    <h5 class="card-title">25 por usted</h5>
+									    <p class="card-text">30 por los demas empleados</p>
+									    <p class="card-text">55 en total</p>
+									  </div>
+									</div>
+									<div class="col-12 col-sm-6 col-md-4 shadow p-0 m-2 card border-info mb-3" style="max-width: 18rem;">
+									  <div class="card-header text-center">Sin Solucion</div>
+									  <div class="card-body text-info">
+									    <h5 class="card-title">25 por usted</h5>
+									    <p class="card-text">30 por los demas empleados</p>
+									    <p class="card-text">55 en total</p>
+									  </div>
+									</div>
+									<div class="col-12 col-sm-6 col-md-4   shadow p-0 m-2 card border-danger mb-3" style="max-width: 18rem;">
+									  <div class="card-header text-center">Sin terminarr</div>
+									  <div class="card-body text-danger">
+									    <h5 class="card-title">25 por usted</h5>
+									    <p class="card-text">30 por los demas empleados</p>
+									    <p class="card-text">55 en total</p>
+									  </div>
+									</div>
+								</div>
+							
+
+
+
+
+
+							</div>
+							
+
+						</section>
+					<div class="row">
+						<div class="col-12 mt-3 text-center">
+							<h3 class="text-muted m-4">Resumen de Actividades</h3>
+						</div>
+					</div>
+
+					<section class="actividades row ">
+						<table class="col table table-striped bg-light shadow" >
+					        <thead>
+					          <tr>
+					            <th scope="col">#</th>
+					            <th scope="col">Fecha</th>
+					            <th scope="col">Hora</th>
+					            <th scope="col">Busqueda</th>
+					            <th scope="col">Url</th>
+					          </tr>
+					        </thead>
+					        <tbody>
+					         
+					          <tr>
+					            <th scope="row">1</th>
+					            <td>1/1/18</td>
+					            <td>01:01</td>
+					            <td>java</td>
+					            <td ><a href="#" class="d-block" style="max-width: 40em; overflow: hidden;">www.url.com</a></td>
+					           
+					          </tr>
+					          <tr>
+					            <th scope="row">2</th>
+					            <td>1/1/18</td>
+					            <td>01:01</td>
+					            <td>java</td>
+					            <td ><a href="#" class="d-block" style="max-width: 40em; overflow: hidden;">www.url.com</a></td>
+					           
+					          </tr>
+					          <tr>
+					            <th scope="row">3</th>
+					            <td>1/1/18</td>
+					            <td>01:01</td>
+					            <td>c++</td>
+					            <td ><a href="#" class="d-block" style="max-width: 40em; overflow: hidden;">www.url.com</a></td>
+					           
+					          </tr>
+					          <tr>
+					            <th scope="row">4</th>
+					            <td>1/1/18</td>
+					            <td>01:01</td>
+					            <td>php</td>
+					            <td ><a href="#" class="d-block" style="max-width: 40em; overflow: hidden;">www.url.com</a></td>
+					           
+					          </tr>
+					          <tr>
+					            <th scope="row">5</th>
+					            <td>1/1/18</td>
+					            <td>01:01</td>
+					            <td>java</td>
+					            <td ><a href="#" class="d-block" style="max-width: 40em; overflow: hidden;">www.url.com</a></td>
+					           
+					          </tr>
+					          <tr>
+					            <th scope="row">6</th>
+					            <td>1/1/18</td>
+					            <td>01:01</td>
+					            <td>java y jquery</td>
+					            <td ><a href="#" class="d-block" style="max-width: 40em; overflow: hidden;">www.url.com</a></td>
+					           
+					          </tr>
+
+
+
+					        </tbody>
+					</table>
+
+
+
+						</section>
+						
+
+
+
+
+
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+						
+				</main>
+			</section>
+
+		</section>
+	</div>
+	
+</body>
+</html>

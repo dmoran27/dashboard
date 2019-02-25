@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="../css/datatables.css">
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/all.min.css">
+
+	
+	<link rel="stylesheet" href="../css/style.css"> 
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../js/all.min.js"></script>
+
+	<script type="text/javascript" src="../js/datatables.js"></script>
+	<script type="text/javascript" src="../js/dashboard.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<!--header class="row  info py-3">
+			<div class="col-1">
+				<img src="img/unexpo.png" class="img-fluid" alt="">
+			</div>
+			<div class="col  ">
+				<p>
+					Universidad Nacional Experimental Politécnica<br>"Antonio Jose de Sucre"<br>Vice Rectorado Puerto Ordaz<br>
+					Oficina Regional de Tecnología y Servicios de Información
+				</p>
+				
+			</div>
+		</header-->
+
+		
+		<section class="row d-flex flex-wrap flex-sm-nowrap p-0">
+
+
+			<!--MENU LATERAL-->
+			<aside class="col-12 col-sm-2 barra-lateral p-0 mb-0 d-flex  justify-content-center "> 
+					<nav class="m-0  text-center text-lg-left w-100">
+						
+						<!--Logo-->
+						<div class="logo border2">
+							<h3 class="">HelpDesk</h3>
+							<div class="text-center my-3">
+									<img src="../img/logo.jpg" width=100px class="rounded-circle img-fluid shadow" alt="">
+							</div>
+							<p class="text-white text-center ">Administrador</p>
+						</div>	
+
+						<!--enlaces de navegacion-->
+						<ul class="p-0 m-0 d-flex flex-wrap justify-content-center justify-content-sm-start" id="main-menu">
+							
+							<!--enlace de inicio-->
+							<li><a class="botonBarraNavegacion" href="../index.html"><i class="fa fa-home mr-lg-3"></i><span>Inicio</span></a></li>
+							
+
+							<!--enlace de Actividades-->
+							<li class=" dropright">
+							  <a class=" dropdown-toggle botonBarraNavegacion " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ticket-alt mr-lg-3"></i><span>Actividades</span></a>
+							  <div class="dropdown-menu m-0 " aria-labelledby="dropdownMenuLink"><!-- Dropdown menu links -->
+									<a href="hardware.html" class="dropdown-item"> <i class="fa fa-desktop mr-lg-3"></i>A nivel de hardware</a>
+									<a href="software.html" class="dropdown-item"><i class="fa fa-terminal mr-lg-3"></i>A nivel de software</a>
+									<a href="personal.html" class="dropdown-item"><i class="fa fa-user-tie mr-lg-3"></i>A nivel de personal</a>
+							  </div>
+							</li> 
+
+							<!--enlace de usuarios-->
+							<li class=" dropright">
+							  <a class=" dropdown-toggle botonBarraNavegacion " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-users mr-lg-3"></i><span>Usuarios</span></a>
+							  <div class="dropdown-menu m-0 " aria-labelledby="dropdownMenuLink"><!-- Dropdown menu links -->
+									<a href="crearUsuarios.html" class="dropdown-item"> <i class="fa fa-user-plus mr-lg-3"></i>Agregar nuevo usuario</a>
+									<a href="listarUsuarios.html" class="dropdown-item"><i class="fa fa-clipboard-list mr-lg-3"></i>Ver lista de usuarios del sistema</a>
+							  </div>
+							</li>
+
+							<!--enlace de clientes-->
+							<li class=" dropright">
+							  <a class=" dropdown-toggle botonBarraNavegacion " href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-address-book mr-lg-3 "></i><span>Clientes</span></a>
+							  <div class="dropdown-menu m-0" aria-labelledby="dropdownMenuLink2"><!-- Dropdown menu links -->
+							  	<a href="#" class="dropdown-item"> <i class="fa fa-user-plus mr-lg-3"></i>Agregar nuevo cliente</a>
+								<a href="#" class="dropdown-item"><i class="fa fa-clipboard-list mr-lg-3"></i>Ver lista de clientes en sistema</a>
+							  </div>
+							</li>
+
+
+							<!--enlace de Equipos-->
+							<li class=" dropright">
+							  <a class=" dropdown-toggle botonBarraNavegacion " href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-toolbox mr-lg-3"></i><span>Equipos</span></a>
+							  <div class="dropdown-menu m-0" aria-labelledby="dropdownMenuLink3"> <!-- Dropdown menu links -->
+								<a href="crearEquipos.html" class="dropdown-item"> <i class="fa fa-plus-circle mr-lg-3"></i>Agregar nuevo Equipo</a>
+								<a href="listarEquipos.html" class="dropdown-item"><i class="fa fa-clipboard-list mr-lg-3"></i>Ver lista de Equipos en sistema</a>
+							   
+							  </div>
+							</li>
+
+							<!--enlace de Reportes-->
+							<li ><a class="botonBarraNavegacion" href="reportes.html"><i class="fa fa-file-alt mr-lg-3"></i><span>Reportes</span></a></li>
+
+							<!--enlace de notificaciones en dispositivos  < 544px en pantalla-->
+							<li class=" d-sm-none"> <a href="notificaciones.html" class="notificaciones text-white"><i class="fa fa-bell mr-2"></i><span>2</span></a></li>
+
+							<!--enlace de configuraciones en dispositivos  < 544px en pantalla-->
+							<li class=" d-sm-none dropdown">
+								 <a class="dropdown-toggle notificaciones text-white "  href="#" role="button" id="dropdownMenuLink5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-tools mr-3"></i></a>
+								<div class="dropdown-menu mr-5" aria-labelledby="dropdownMenuLink5">
+									<a href="modules/perfil.html" class="dropdown-item  text-white"><i class="fa fa-user "></i>Perfil</a>
+									<a href="modules/configuracion.html" class="dropdown-item  text-white"><i class="fa fa-tools"></i>Configuraciones</a>
+									<div class="dropdown-divider m-0"></div>
+									<a href="#" class="dropdown-item  text-white"><i class="fa fa-sign-out-alt"></i>Cerrar Sesion</a>						
+								</div>
+							</li>
+						</ul>					
+				</nav>
+				<!--FIN DEL MENU LATERAL-->
+			</aside>
+
+				<!--MENU BARRA HORIZONTAL-->
+			<section class="col-12 col-sm-10 mb-2">
+				<div class="row barraHorizontalDos p-2 pr-3 pr-lg-5 text-white">					
+					<div class="col p-0 d-flex justify-content-end">
+							<!--enlace de notificaciones-->
+						<a href="notificaciones.html" class="text-white"><i class="fa fa-bell "></i><sub class=" bg-danger rounded-circle p-2">2</sub></a>
+							<!--Enlace de configuracion-->
+						<div class="dropdown">	
+								<a class="dropdown-toggle text-white p-2 ml-3"  href="#" role="button" id="dropdownMenuLink6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Diana</a>
+								<div class="dropdown-menu mt-0 p-0 mr-5" aria-labelledby="dropdownMenuLink6">
+									<a href="modules/perfil.html" class="dropdown-item"><i class="fa fa-user mr-3"></i><span>Perfil,</span></a>
+									<a href="modules/configuracion.html" class="dropdown-item"><i class="fa fa-tools mr-3"></i><span>Configuraciones</span></a>
+									<div class="dropdown-divider m-0"></div>
+									<a href="#" class="dropdown-item"><i class="fa fa-sign-out-alt mr-3"></i><span>Cerrar Sesion</span></a>						
+								</div>
+						</div>
+					</div>
+					<!--FIN BARRA HORIZONTAL-->
+				</div>		
+
+
+					<!--CONTENIDO-->				
+				<main class="row p-0 m-0">
+					<div class="col">
+						<!--Titulo-->	
+						<div class="row">
+							<div class="col-12 mt-3 text-center">
+								<h3 class=" m-4">Actividades a nivel de Hardware</h3>
+							</div>
+						</div>
+						<!--Dependencias-->
+						<div class="row  d-flex justify-content-center">
+							<form action="../index.html" class="col-12" method="POST">
+							<div class="form-row d-flex justify-content-between">
+								<div class="form-group col-md-6 d-flex align-items-center	flex-no-wrap">
+									<label for="#edificio" >Edificio:</label>
+									<select name="cars" class=" form-control shadow-sm rounded bg-white text-muted" id="edificio">
+									    <option value="volvo">Volvo</option>
+									    <option value="saab">Saab</option>
+									    <option value="fiat">Fiat</option>
+									    <option value="audi">Audi</option>
+									 </select>
+									 <label for="#piso" >Piso</label>
+									<select name="cars" class="form-control shadow-sm  rounded bg-white text-muted" id="piso">
+									    <option value="volvo">Volvo</option>
+									    <option value="saab">Saab</option>
+									    <option value="fiat">Fiat</option>
+									    <option value="audi">Audi</option>
+									 </select>
+									 <label for="#departamento">Departamento:</label>
+									<select name="cars" class="form-control shadow-smrounded bg-white text-muted" id="departamento">
+									    <option value="volvo">Volvo</option>
+									    <option value="saab">Saab</option>
+									    <option value="fiat">Fiat</option>
+									    <option value="audi">Audi</option>
+									 </select>
+
+								</div>
+								<div class="form-group col d-flex align-items-center	flex-no-wrap">
+									<label for="">Solicitante: </label>
+									<div class="custom-control custom-radio custom-control-inline">
+									  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+									  <label class="custom-control-label" for="customRadioInline1">Cliente</label>
+									</div>
+									<div class="custom-control custom-radio custom-control-inline">
+									  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+									  <label class="custom-control-label" for="customRadioInline2">Usuario</label>
+									</div>
+
+								</div>
+									<div class="form-group col-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#fecha">Fecha: </label>
+										<input type="text" name="" class="form-control shadow-sm bg-white rounded disable " disabled placeholder="03/03/2018">
+									</div>
+
+							</div>
+							<!-- servicios y equipo-->
+							<div class="form-row d-flex justify-content-between">
+								<div class="form-group col-2 d-flex align-items-center">
+															
+									<label for="#tipoServicio" >Tipo de Servicio:</label>
+									<select name="cars" class=" form-control shadow-sm rounded bg-white text-muted" id="tipoServicio">
+									    <option value="volvo">Volvo</option>
+									    <option value="saab">Saab</option>
+									    <option value="fiat">Fiat</option>
+									    <option value="audi">Audi</option>
+									 </select>
+								</div>
+								<div class="form-group col d-flex align-items-center	flex-no-wrap">
+									
+									<div class="custom-control custom-radio custom-control-inline">
+									  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+									  <label class="custom-control-label" for="customRadioInline1">Equipo Nuevo</label>
+									</div>
+									<div class="custom-control custom-radio custom-control-inline">
+									  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+									  <label class="custom-control-label" for="customRadioInline2">Equipo Existente</label>
+									</div>
+
+								</div>
+
+
+								<div class="form-group col-2 d-flex align-items-center">
+									<label for="#tipoEquipo">Tipo de Equipo:</label>
+									<select name="cars" class="form-control shadow-sm rounded bg-white text-muted" id="tipoEquipo">
+									    <option value="volvo">Volvo</option>
+									    <option value="saab">Saab</option>
+									    <option value="fiat">Fiat</option>
+									    <option value="audi">Audi</option>
+									 </select>
+								</div>
+								<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#equipo">Equipo: </label>
+										<input type="text" name="" id="equipo" class="form-control shadow-sm bg-white rounded disable " disabled >
+								</div>
+								<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#nombreEquipo">Nombre del Equipo: </label>
+										<input type="text" name="" id="nombreEquipo" class="form-control shadow-sm bg-white rounded disable " disabled >
+								</div>
+							</div>
+							<!-- Detalles de equipo-->
+							<div class="form-row d-flex justify-content-between">	
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#marca">Marca: </label>
+										<input type="text" name="" id="marca" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#modelo">Modelo: </label>
+										<input type="text" name="" id="modelo" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#serial">Serial: </label>
+										<input type="text" name="" id="serial" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#codigoBN">Codigo B/N: </label>
+										<input type="text" name="" id="codigoBN" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#tm">TM: </label>
+										<input type="text" name="" id="tm" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#procesadorVelocidad">Procesador/Velocidad: </label>
+										<input type="text" name="" id="procesadorVelocidad" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#usbFP">USB F/P: </label>
+										<input type="text" name="" id="usbFP" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#memoriaFrecuencia">Memoria/Frecuencia: </label>
+										<input type="text" name="" id="memoriaFrecuencia" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#discoDuro">Disco Duro: </label>
+										<input type="text" name="" id="discoDuro" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#uOpticas">U. Opticas: </label>
+										<input type="text" name="" id="uOpticas" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+									<div class="form-group col-md-2 d-flex align-items-center	flex-no-wrap">
+										<label for="#Floppy">Floppy: </label>
+										<input type="text" name="" id="Floppy" class="form-control shadow-sm bg-white rounded disable " disabled >
+									</div>
+							</div>
+							<!-- detalle de fallas-->
+							<div class="form-row d-flex justify-content-between">
+								<div class="form-group col-md-12 d-flex align-items-center	flex-no-wrap">
+									<label for="#fallas" class="">Fallas:</label>
+									<textarea name="" id="fallas" class="form-control  mb-3 shadow-sm p-3  bg-white rounded "  placeholder="Describa los errores presentados en el equipo" ></textarea>
+				                
+								</div>
+								<div class="form-group col-md-12 d-flex align-items-center	flex-no-wrap">
+									<label for="#caracteristicas">Caracteristicas:</label>
+									<textarea name="" id="caracteristicas" class="form-control shadow-sm mb-3 p-3 bg-white rounded " placeholder="Detalle las caracteristicas que presenta el equipo" ></textarea>
+								</div>
+								<div class="form-group col-md-12 d-flex align-items-center	flex-no-wrap">
+									<label for="#observacion">Observaciones:</label>
+									<textarea name=""  class="form-control shadow-sm mb-3 p-3 bg-white rounded "  placeholder="Observacion"></textarea>
+								</div>
+								<div class="form-group col-md-12 d-flex align-items-center	flex-no-wrap">
+									<label for="#analisisFalla">Analisis de Falla:</label>
+									<textarea name=""  class="form-control shadow-sm mb-3 p-3 bg-white rounded "  placeholder="analisisFalla"></textarea>
+								</div>
+				            </div>
+
+				                <button type="submit" class="btn btn-secondary btn-lg btn-block mt-5 ">Aperturar Actividad</button>
+				                <div class=" mt-3 ">	
+				                    <p class="d-block text-center text-muted mb-0 ">	Desea visualizar el listado de las actividades? </p>
+				                    <a href="login.html" class="d-block text-center link">Ver Actividades</a>
+				                </div>
+				            </form>
+				        </div>
+						</div>
+					</div>
+				</main>
+			</section>
+
+
+	</div>
+	
+</body>
+</html>
